@@ -2,6 +2,7 @@
 Starter pack for Node Express and Mongo backend using Passport-JWT
 
 # Configurable Variables
+- Port number in `app.js` (Default: 1110)
 - Database Name and Secret Key in `keys-dev.js`
 - UserSchema in `User.js`
 
