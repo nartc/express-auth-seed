@@ -30,7 +30,7 @@ router.post('/register', (req, res) => {
       success: true,
       title: 'Success',
       message: 'Successfully registered new User',
-      user: user
+      response: user
     });
   });
 });
@@ -90,7 +90,7 @@ router.post('/login', (req, res) => {
             title: 'Success',
             message: 'Logged In Successfully',
             authToken: `JWT ${token}`,
-            user: {
+            response: {
               _id: user._id,
               email: user.email
             }
