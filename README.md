@@ -18,7 +18,7 @@ Starter pack for Node Express and Mongo backend using Passport-JWT
 - After the Angular has been generated, go in `.angular-cli.json` and make sure the `outDir` is set to `../build`
 
 # Response Data Format
-```
+```js
 {
   success: boolean,
   title: string,
@@ -30,7 +30,7 @@ Starter pack for Node Express and Mongo backend using Passport-JWT
 - The format will help you to have a general format to make your front-end application stays consistent with checking the response from any API calls. 
 
 # Example in Angular:
-```
+```ts
 import { User } from 'path/models/User.ts';
 
 export interface IUserResponse {
@@ -43,7 +43,7 @@ export interface IUserResponse {
 ```
 
 and implementation in NotificationService: 
-```
+```ts
 showSuccess(data: IUserResponse) {
   //do stuff with `data`
 }
