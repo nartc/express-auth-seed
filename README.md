@@ -15,3 +15,35 @@ Starter pack for Node Express and Mongo backend using Passport-JWT
 - Make sure you have installed `Angular-CLI` with `npm install -g @angular/cli`
 - In the directory, run `ng new [angular-src] --skip-git --skip-commit`. This is to make sure you can use the same repo for both backend and frontend.
 - After the Angular has been generated, go in `.angular-cli.json` and make sure the `outDir` is set to `../build`
+
+# Response Data Format
+```
+{
+  success: boolean,
+  title: string,
+  message: string,
+  error?: Error | Object,
+  response?: [Response-Type]
+}
+```
+- The format will help you to have a general format to make your front-end application stays consistent with checking the response from any API calls. 
+
+# Example in Angular:
+```
+import { User } from 'path/models/User.ts';
+
+export interface IUserResponse {
+  success: boolean,
+  title: string,
+  message: string,
+  error?: Error,
+  response?: User
+}
+```
+
+and implementation in NotificationService: 
+```
+showSuccess(data: IUserResponse) {
+  //do stuff with `data`
+}
+```
