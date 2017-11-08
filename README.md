@@ -42,6 +42,32 @@ export interface IUserResponse {
 }
 ```
 
+Or create a general interface 
+```ts
+export interface IDataResponse {
+  success: boolean,
+  title: string,
+  message: string
+  error?: Error
+}
+```
+
+then `implements IDataResponse` for your other interfaces 
+```ts
+import { User } from 'path/models/User.ts';
+import { Product } from 'path/models/Product.ts';
+
+import { IDataResponse } from 'path';
+
+export interface IUserResponse implements IDataResponse {
+  response: User;
+}
+
+export interface IProductResponse implements IDataResponse {
+  response: Product;
+}
+```
+
 and implementation in NotificationService: 
 ```ts
 showSuccess(data: IUserResponse) {
