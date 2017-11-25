@@ -59,11 +59,11 @@ import { Product } from 'path/models/Product.ts';
 
 import { IDataResponse } from 'path';
 
-export interface IUserResponse implements IDataResponse {
+export interface IUserResponse extends IDataResponse {
   response: User;
 }
 
-export interface IProductResponse implements IDataResponse {
+export interface IProductResponse extends IDataResponse {
   response: Product;
 }
 ```
